@@ -1,4 +1,4 @@
-# QianPlayer
+# <img src="imgs/appicon.svg" width="36" height="36" alt="icon"> QianPlayer
 
 轻量、快速、功能丰富的 macOS 原生视频播放器。
 
