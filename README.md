@@ -30,7 +30,7 @@
 
 ## 系统要求
 
-- macOS 14.0 (Sonoma) 或更高版本
+- macOS 15.0 (Sequoia) 或更高版本
 - Apple Silicon (M1 / M2 / M3 / M4)
 
 ## 安装
