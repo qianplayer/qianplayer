@@ -37,7 +37,7 @@
 
 下载 [最新 Release](https://github.com/qianplayer/qianplayer.github.io/releases)，打开 DMG 拖入 Applications 即可。
 
-> 首次打开如遇 Gatekeeper 拦截，右键点击 app → 选"打开"。
+> 首次打开如遇安全性提示：打开「系统设置」→「隐私与安全性」→ 下滑到「安全性」部分 → 点击「仍要打开」QianPlayer。
 
 ## 许可证
 
