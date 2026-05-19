@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QianPlayer - macOS 视频播放器</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+        .container { max-width: 800px; margin: 0 auto; padding: 60px 24px; }
+        header { text-align: center; margin-bottom: 60px; }
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #64b5f6, #42a5f5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 12px;
+        }
+        .tagline { font-size: 1.2rem; color: #90a4ae; }
+        .download-section { text-align: center; margin: 40px 0; }
+        .download-btn {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(135deg, #42a5f5, #1e88e5);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(66, 165, 245, 0.3);
+        }
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(66, 165, 245, 0.5);
+        }
+        .version-info { margin-top: 12px; color: #78909c; font-size: 0.9rem; }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 60px 0;
+        }
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+        }
+        .feature h3 { color: #64b5f6; margin-bottom: 8px; font-size: 1rem; }
+        .feature p { color: #b0bec5; font-size: 0.9rem; line-height: 1.6; }
+        .requirements {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            padding: 24px;
+            margin-top: 40px;
+        }
+        .requirements h2 { color: #64b5f6; margin-bottom: 12px; font-size: 1.2rem; }
+        .requirements ul { list-style: none; }
+        .requirements li { padding: 4px 0; color: #b0bec5; }
+        .requirements li::before { content: "•"; color: #42a5f5; margin-right: 8px; }
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #78909c;
+            font-size: 0.85rem;
+        }
+        footer a { color: #64b5f6; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>QianPlayer</h1>
+            <p class="tagline">轻量、快速的 macOS 视频播放器，基于 mpv 引擎</p>
+        </header>
+
+        <div class="download-section">
+            <a href="https://github.com/byronyz/qianplayer/releases/latest" class="download-btn">
+                下载最新版本
+            </a>
+            <p class="version-info">支持 Apple Silicon (arm64) · macOS 15.4+</p>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <h3>mpv 引擎</h3>
+                <p>基于强大的 mpv/ffmpeg 解码核心，支持几乎所有视频格式</p>
+            </div>
+            <div class="feature">
+                <h3>原生 SwiftUI</h3>
+                <p>使用 SwiftUI 构建原生 macOS 界面，流畅且美观</p>
+            </div>
+            <div class="feature">
+                <h3>DLNA/UPnP</h3>
+                <p>支持局域网媒体源发现和播放</p>
+            </div>
+            <div class="feature">
+                <h3>轻量高效</h3>
+                <p>极低资源占用，启动迅速，专注播放体验</p>
+            </div>
+        </div>
+
+        <div class="requirements">
+            <h2>系统要求</h2>
+            <ul>
+                <li>macOS 15.4 或更高版本</li>
+                <li>Apple Silicon (M1/M2/M3/M4)</li>
+            </ul>
+        </div>
+
+        <footer>
+            <p><a href="https://github.com/byronyz/qianplayer">GitHub</a> · QianPlayer</p>
+        </footer>
+    </div>
+</body>
+</html>
