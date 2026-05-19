@@ -7,119 +7,296 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            color: #e0e0e0;
-            min-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", sans-serif;
+            background: #0d1117;
+            color: #e6edf3;
+            line-height: 1.6;
         }
-        .container { max-width: 800px; margin: 0 auto; padding: 60px 24px; }
-        header { text-align: center; margin-bottom: 60px; }
-        h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            background: linear-gradient(90deg, #64b5f6, #42a5f5);
+        a { color: #58a6ff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 80px 24px 60px;
+            background: linear-gradient(180deg, #161b22 0%, #0d1117 100%);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #58a6ff, #3fb950);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
-        .tagline { font-size: 1.2rem; color: #90a4ae; }
-        .download-section { text-align: center; margin: 40px 0; }
+        .hero .tagline {
+            font-size: 1.3rem;
+            color: #8b949e;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
         .download-btn {
             display: inline-block;
-            padding: 16px 40px;
-            background: linear-gradient(135deg, #42a5f5, #1e88e5);
+            padding: 14px 36px;
+            background: #238636;
             color: #fff;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 1.1rem;
+            border-radius: 8px;
+            font-size: 1.05rem;
             font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 15px rgba(66, 165, 245, 0.3);
+            transition: background 0.2s, transform 0.15s;
         }
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(66, 165, 245, 0.5);
+        .download-btn:hover { background: #2ea043; transform: translateY(-1px); text-decoration: none; }
+        .download-meta { margin-top: 12px; color: #8b949e; font-size: 0.85rem; }
+
+        /* Screenshots */
+        .screenshots {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 40px 24px 60px;
         }
-        .version-info { margin-top: 12px; color: #78909c; font-size: 0.9rem; }
-        .features {
+        .screenshots h2 { text-align: center; font-size: 1.6rem; margin-bottom: 24px; color: #f0f6fc; }
+        .screenshot-gallery {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+            padding-bottom: 12px;
+            scroll-snap-type: x mandatory;
+        }
+        .screenshot-gallery img {
+            max-width: 100%;
+            border-radius: 12px;
+            border: 1px solid #30363d;
+            scroll-snap-align: center;
+            flex-shrink: 0;
+        }
+
+        /* Sections */
+        .section {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 60px 24px;
+            border-top: 1px solid #21262d;
+        }
+        .section h2 {
+            font-size: 1.6rem;
+            color: #f0f6fc;
+            margin-bottom: 8px;
+        }
+        .section .subtitle {
+            color: #8b949e;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 24px;
-            margin: 60px 0;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
         }
-        .feature {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
+        .feature-card {
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
             padding: 24px;
+            transition: border-color 0.2s;
         }
-        .feature h3 { color: #64b5f6; margin-bottom: 8px; font-size: 1rem; }
-        .feature p { color: #b0bec5; font-size: 0.9rem; line-height: 1.6; }
+        .feature-card:hover { border-color: #58a6ff; }
+        .feature-card .icon { font-size: 1.5rem; margin-bottom: 10px; }
+        .feature-card h3 { font-size: 1rem; color: #f0f6fc; margin-bottom: 8px; }
+        .feature-card p { color: #8b949e; font-size: 0.88rem; line-height: 1.5; }
+
+        /* Overview list */
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+        .overview-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .overview-item .dot {
+            width: 8px; height: 8px;
+            background: #3fb950;
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+        .overview-item p { color: #c9d1d9; font-size: 0.92rem; }
+
+        /* Requirements */
         .requirements {
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
+            background: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 10px;
             padding: 24px;
-            margin-top: 40px;
+            margin-top: 24px;
+            display: inline-block;
         }
-        .requirements h2 { color: #64b5f6; margin-bottom: 12px; font-size: 1.2rem; }
-        .requirements ul { list-style: none; }
-        .requirements li { padding: 4px 0; color: #b0bec5; }
-        .requirements li::before { content: "•"; color: #42a5f5; margin-right: 8px; }
+        .requirements h3 { color: #f0f6fc; margin-bottom: 10px; font-size: 0.95rem; }
+        .requirements li {
+            list-style: none;
+            color: #8b949e;
+            padding: 3px 0;
+            font-size: 0.9rem;
+        }
+        .requirements li::before { content: "→ "; color: #58a6ff; }
+
+        /* Footer */
         footer {
             text-align: center;
-            margin-top: 60px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #78909c;
+            padding: 40px 24px;
+            border-top: 1px solid #21262d;
+            color: #484f58;
             font-size: 0.85rem;
         }
-        footer a { color: #64b5f6; text-decoration: none; }
+        footer a { color: #58a6ff; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>QianPlayer</h1>
-            <p class="tagline">轻量、快速的 macOS 视频播放器，基于 mpv 引擎</p>
-        </header>
 
-        <div class="download-section">
-            <a href="https://github.com/byronyz/qianplayer/releases/latest" class="download-btn">
-                下载最新版本
-            </a>
-            <p class="version-info">支持 Apple Silicon (arm64) · macOS 15.4+</p>
-        </div>
+<!-- Hero -->
+<section class="hero">
+    <h1>QianPlayer</h1>
+    <p class="tagline">轻量、快速、功能丰富的 macOS 原生视频播放器，基于 mpv 引擎打造</p>
+    <a href="https://github.com/byronyz/qianplayer/releases/latest" class="download-btn">下载最新版本</a>
+    <p class="download-meta">Apple Silicon · macOS 15.4+ · 免费开源</p>
+</section>
 
-        <div class="features">
-            <div class="feature">
-                <h3>mpv 引擎</h3>
-                <p>基于强大的 mpv/ffmpeg 解码核心，支持几乎所有视频格式</p>
-            </div>
-            <div class="feature">
-                <h3>原生 SwiftUI</h3>
-                <p>使用 SwiftUI 构建原生 macOS 界面，流畅且美观</p>
-            </div>
-            <div class="feature">
-                <h3>DLNA/UPnP</h3>
-                <p>支持局域网媒体源发现和播放</p>
-            </div>
-            <div class="feature">
-                <h3>轻量高效</h3>
-                <p>极低资源占用，启动迅速，专注播放体验</p>
-            </div>
-        </div>
-
-        <div class="requirements">
-            <h2>系统要求</h2>
-            <ul>
-                <li>macOS 15.4 或更高版本</li>
-                <li>Apple Silicon (M1/M2/M3/M4)</li>
-            </ul>
-        </div>
-
-        <footer>
-            <p><a href="https://github.com/byronyz/qianplayer">GitHub</a> · QianPlayer</p>
-        </footer>
+<!-- Screenshots -->
+<section class="screenshots">
+    <h2>界面预览</h2>
+    <div class="screenshot-gallery">
+        <img src="imgs/main.png" alt="QianPlayer 主界面">
     </div>
+</section>
+
+<!-- Overview -->
+<section class="section">
+    <h2>综合介绍</h2>
+    <p class="subtitle">QianPlayer 是一款为 macOS 设计的现代视频播放器，使用 SwiftUI 构建原生界面，内嵌 mpv/ffmpeg 作为解码核心，兼顾极致性能与优雅体验。</p>
+    <div class="overview-grid">
+        <div class="overview-item"><div class="dot"></div><p>原生 SwiftUI 界面，完美适配系统风格</p></div>
+        <div class="overview-item"><div class="dot"></div><p>mpv + ffmpeg 引擎，格式兼容无死角</p></div>
+        <div class="overview-item"><div class="dot"></div><p>VideoToolbox 硬件加速解码</p></div>
+        <div class="overview-item"><div class="dot"></div><p>HDR 内容自动识别与渲染</p></div>
+        <div class="overview-item"><div class="dot"></div><p>DLNA 投屏接收 / 局域网播放</p></div>
+        <div class="overview-item"><div class="dot"></div><p>磁力链接边下边播</p></div>
+        <div class="overview-item"><div class="dot"></div><p>画中画 (PiP) 支持</p></div>
+        <div class="overview-item"><div class="dot"></div><p>智能文件源管理与播放列表</p></div>
+    </div>
+</section>
+
+<!-- Video -->
+<section class="section">
+    <h2>视频特点</h2>
+    <p class="subtitle">专业级视频渲染能力，满足从日常观看到影音发烧的全场景需求</p>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="icon">⚡</div>
+            <h3>硬件加速解码</h3>
+            <p>使用 macOS VideoToolbox 硬件解码，支持 H.264/H.265/VP9/AV1 等编码格式，CPU 占用极低</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🎨</div>
+            <h3>HDR 自动适配</h3>
+            <p>自动识别 HDR10/HLG 内容并启用 tone-mapping，在 SDR 显示器上也能正确还原色彩</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🎛️</div>
+            <h3>视频参数调节</h3>
+            <p>亮度、对比度、饱和度、色相、伽马实时调整，支持灰度模式和画面旋转</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📺</div>
+            <h3>字幕系统</h3>
+            <p>内置字幕轨道切换，支持 SRT/ASS/SSA/VTT 外挂字幕加载，字幕延迟微调</p>
+        </div>
+    </div>
+</section>
+
+<!-- Audio -->
+<section class="section">
+    <h2>音频特点</h2>
+    <p class="subtitle">高质量音频输出，精细化控制每一个细节</p>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="icon">🔊</div>
+            <h3>音频轨道管理</h3>
+            <p>多音轨自由切换，支持视频内嵌的所有音频流选择</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🎚️</div>
+            <h3>精确音量控制</h3>
+            <p>0-120% 无级音量调节，支持静音/恢复记忆上次音量</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🎵</div>
+            <h3>格式全覆盖</h3>
+            <p>基于 ffmpeg 解码，支持 AAC/FLAC/Opus/DTS/AC3/TrueHD 等全部主流音频编码</p>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="section">
+    <h2>功能特点</h2>
+    <p class="subtitle">围绕播放体验设计的实用功能集</p>
+    <div class="feature-grid">
+        <div class="feature-card">
+            <div class="icon">📂</div>
+            <h3>文件源管理</h3>
+            <p>添加本地文件夹作为视频源，自动扫描和索引，支持树形目录浏览和拼音搜索</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📡</div>
+            <h3>DLNA / UPnP</h3>
+            <p>作为 DLNA 渲染器接收投屏，手机/电视盒子可直接推送视频到 QianPlayer 播放</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🧲</div>
+            <h3>磁力链接播放</h3>
+            <p>粘贴磁力链接即可边下边播，实时显示下载进度、速率和连接状态</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">🖼️</div>
+            <h3>画中画 (PiP)</h3>
+            <p>一键进入系统画中画模式，浮窗置顶播放，边工作边看视频</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">📋</div>
+            <h3>播放列表</h3>
+            <p>创建和管理多个播放列表，支持添加、排序、重命名，自动记录播放历史</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon">💾</div>
+            <h3>数据库存储</h3>
+            <p>基于 GRDB/SQLite 本地数据库，视频信息、播放记录、列表数据持久化存储</p>
+        </div>
+    </div>
+</section>
+
+<!-- System Requirements -->
+<section class="section">
+    <h2>系统要求</h2>
+    <div class="requirements">
+        <h3>最低配置</h3>
+        <ul>
+            <li>macOS 15.4 (Sequoia) 或更高版本</li>
+            <li>Apple Silicon 芯片 (M1 / M2 / M3 / M4)</li>
+            <li>约 80 MB 磁盘空间</li>
+        </ul>
+    </div>
+</section>
+
+<footer>
+    <p>
+        <a href="https://github.com/byronyz/qianplayer">GitHub 源码</a> ·
+        QianPlayer — 开源免费，用爱发电
+    </p>
+</footer>
+
 </body>
 </html>
