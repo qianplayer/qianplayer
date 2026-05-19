@@ -35,7 +35,7 @@
 
 ## 安装
 
-下载 [最新 Release](https://github.com/qianplayer/qianplayer/releases)，打开 DMG 拖入 Applications 即可。
+下载 [最新 Release](https://github.com/qianplayer/qianplayer.github.io/releases)，打开 DMG 拖入 Applications 即可。
 
 > 首次打开如遇 Gatekeeper 拦截，右键点击 app → 选"打开"。
 
