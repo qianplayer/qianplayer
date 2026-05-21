@@ -23,34 +23,9 @@ function applyI18n(i18nData) {
 
   document.documentElement.lang = t.htmlLang;
   document.documentElement.dir = t.dir;
-  document.title = t.title;
 
   const pinyinCard = document.getElementById('pinyin-search');
   if (pinyinCard) pinyinCard.style.display = isChinese ? '' : 'none';
-
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.content = t.metaDesc;
-
-  const ogTitle = document.querySelector('meta[property="og:title"]');
-  if (ogTitle) ogTitle.content = t.title;
-  const ogDesc = document.querySelector('meta[property="og:description"]');
-  if (ogDesc) ogDesc.content = t.metaDesc;
-  const ogLocale = document.querySelector('meta[property="og:locale"]');
-  if (ogLocale) ogLocale.content = t.htmlLang.replace('-', '_');
-
-  const twTitle = document.querySelector('meta[name="twitter:title"]');
-  if (twTitle) twTitle.content = t.title;
-  const twDesc = document.querySelector('meta[name="twitter:description"]');
-  if (twDesc) twDesc.content = t.tagline;
-
-  const ldJson = document.querySelector('script[type="application/ld+json"]');
-  if (ldJson) {
-    try {
-      const schema = JSON.parse(ldJson.textContent);
-      schema.description = t.metaDesc;
-      ldJson.textContent = JSON.stringify(schema);
-    } catch (e) {}
-  }
 
   const sections = document.querySelectorAll('.section');
   const hero = document.querySelector('.hero');
