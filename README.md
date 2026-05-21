@@ -1,3 +1,5 @@
+> 🌐 [English](README_en.md) | [繁體中文](README_zh-Hant.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [日本語](README_ja.md) | [Español](README_es.md) | [العربية](README_ar.md)
+
 # <img src="imgs/appicon.svg" width="36" height="36" alt="icon"> QianPlayer
 
 轻量、快速、功能丰富的 macOS 原生视频播放器。
