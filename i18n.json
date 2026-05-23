@@ -389,7 +389,7 @@
     "reqTitle": "Requisitos mínimos",
     "reqItems": ["macOS 15.0 (Sequoia) o posterior", "Apple Silicon (M1 / M2 / M3 / M4)", "~80 MB de espacio en disco"],
     "secTitle": "¿Aviso de seguridad en el primer inicio?",
-    "secItems": ["Abre Ajustes del Sistema → Privacidad y seguridad", "Desplázate hasta Seguridad", "Haz clic en «Abrir de todos modos» para QianPlayer"],
+    "secItems": ["Abre Ajustes del Sistema → Privacidad y seguridad", "Desplázate hasta Seguridad", "Haz clic en «Abrir igualmente» para QianPlayer"],
     "footerSource": "Código fuente en GitHub",
     "footerSlogan": "QianPlayer — Gratuito y ligero"
   },
