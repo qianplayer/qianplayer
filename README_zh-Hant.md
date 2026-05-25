@@ -4,7 +4,7 @@
 
 輕量、快速、功能豐富的 macOS 原生影片播放器。
 
-![主介面](imgs/main.png)
+![主介面](imgs/main.webp)
 
 ## 特色
 

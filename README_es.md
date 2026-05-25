@@ -4,7 +4,7 @@
 
 Un reproductor de vídeo nativo para macOS: ligero, rápido y repleto de funciones.
 
-![Interfaz principal](imgs/main.png)
+![Interfaz principal](imgs/main.webp)
 
 ## Características
 

@@ -4,7 +4,7 @@
 
 Ein leichtgewichtiger, schneller und funktionsreicher nativer Video-Player für macOS.
 
-![Hauptoberfläche](imgs/main.png)
+![Hauptoberfläche](imgs/main.webp)
 
 ## Funktionen
 

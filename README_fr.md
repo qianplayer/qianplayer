@@ -4,7 +4,7 @@
 
 Un lecteur vidéo natif macOS léger, rapide et riche en fonctionnalités.
 
-![Interface principale](imgs/main.png)
+![Interface principale](imgs/main.webp)
 
 ## Fonctionnalités
 
