@@ -1,4 +1,4 @@
-> 🌐 [简体中文](README.md) | [English](README_en.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [日本語](README_ja.md) | [Español](README_es.md) | [العربية](README_ar.md)
+> 🌐 [English](README.md) | [简体中文](README_zh-Hans.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [日本語](README_ja.md) | [Español](README_es.md) | [العربية](README_ar.md)
 
 # <img src="imgs/appicon.svg" width="36" height="36" alt="icon"> QianPlayer
 

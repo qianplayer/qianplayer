@@ -1,47 +1,46 @@
-> 🌐 [English](README_en.md) | [繁體中文](README_zh-Hant.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [日本語](README_ja.md) | [Español](README_es.md) | [العربية](README_ar.md)
+> 🌐 [简体中文](README_zh-Hans.md) | [繁體中文](README_zh-Hant.md) | [Français](README_fr.md) | [Deutsch](README_de.md) | [日本語](README_ja.md) | [Español](README_es.md) | [العربية](README_ar.md)
 
 # <img src="imgs/appicon.svg" width="36" height="36" alt="icon"> QianPlayer
 
-轻量、快速、功能丰富的 macOS 原生视频播放器。
+A lightweight, fast, and feature-rich native video player for macOS.
 
-![主界面](imgs/main.png)
+![Main Interface](imgs/main.png)
 
-## 特性
+## Features
 
-### 视频
+### Video
 
-- **硬件加速解码** — 硬解 H.264/H.265/VP9/AV1，CPU 占用极低
-- **HDR 自动适配** — 识别 HDR10/HLG 内容，自动 tone-mapping
-- **视频参数调节** — 亮度、对比度、饱和度、色相、伽马实时调整，支持灰度和旋转
-- **字幕系统** — 多轨切换，外挂 SRT/ASS/SSA/VTT，延迟微调
-- **mpv 解码 · Metal 原生呈现** — 基于 mpv 核心解码引擎，Metal 原生渲染管线零拷贝上屏，延迟极低，充分发挥 Apple Silicon GPU 性能
+- **Hardware-Accelerated Decoding** — Hardware decode H.264/H.265/VP9/AV1 with minimal CPU usage
+- **Auto HDR Adaptation** — Detects HDR10/HLG content and applies automatic tone-mapping
+- **Video Parameter Controls** — Real-time adjustments for brightness, contrast, saturation, hue, and gamma; supports grayscale and rotation
+- **Subtitle System** — Multi-track switching, external SRT/ASS/SSA/VTT support, fine-tuned delay adjustment
+- **mpv Decoding · Metal Native Rendering** — Powered by the mpv core decoding engine with a Metal-native render pipeline for zero-copy display, ultra-low latency, and full Apple Silicon GPU utilization
 
-### 音频
+### Audio
 
-- **多音轨切换** — 自由选择视频内嵌的所有音频流
-- **空间音频** — 支持空间音频渲染，沉浸式环绕声体验
-- **全格式解码** — AAC/FLAC/Opus/DTS/AC3/TrueHD 等
+- **Multi-Track Switching** — Freely select from all embedded audio streams
+- **Spatial Audio** — Spatial audio rendering for an immersive surround sound experience
+- **Universal Format Decoding** — AAC/FLAC/Opus/DTS/AC3/TrueHD and more
 
-### 功能
+### Functionality
 
-- **文件源管理** — 添加本地文件夹，自动扫描索引，树形浏览 + 拼音搜索
-- **DLNA / UPnP** — 作为渲染器接收投屏，手机/电视盒子直推播放
-- **磁力链接** — 粘贴磁力链接边下边播，实时进度/速率显示
-- **画中画 (PiP)** — 系统级浮窗置顶播放
-- **播放列表** — 创建、管理、排序，自动记录播放历史
-- **简拼快搜** — 输入文件名拼音首字母即可快速定位视频
+- **File Source Management** — Add local folders with automatic scanning and indexing, tree-view browsing
+- **DLNA / UPnP** — Acts as a renderer to receive screen casting from phones and TV boxes
+- **Magnet Links** — Paste a magnet link to stream while downloading, with real-time progress and speed display
+- **Picture-in-Picture (PiP)** — System-level floating window for always-on-top playback
+- **Playlists** — Create, manage, and sort playlists with automatic playback history
 
-## 系统要求
+## System Requirements
 
-- macOS 15.0 (Sequoia) 或更高版本
+- macOS 15.0 (Sequoia) or later
 - Apple Silicon (M1 / M2 / M3 / M4)
 
-## 安装
+## Installation
 
-下载 [最新 Release](https://github.com/qianplayer/qianplayer.github.io/releases)，打开 DMG 拖入 Applications 即可。
+Download the [latest release](https://github.com/qianplayer/qianplayer.github.io/releases), open the DMG, and drag QianPlayer into Applications.
 
-> 首次打开如遇安全性提示：打开「系统设置」→「隐私与安全性」→ 下滑到「安全性」部分 → 点击「仍要打开」QianPlayer。
+> If macOS blocks the first launch: open System Settings → Privacy & Security → scroll down to Security → click "Open Anyway" for QianPlayer.
 
-## 许可证
+## License
 
-免费轻量
+Free & Lightweight
